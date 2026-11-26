@@ -1,7 +1,3 @@
-local source = debug.getinfo(1, "S").source:sub(2)
-local package_root = vim.fs.dirname(vim.fs.dirname(source))
-local default_binary = vim.fs.joinpath(package_root, "bin", "ox")
-
 local function notify_error(message)
     vim.notify("ox: " .. message, vim.log.levels.ERROR)
 end
@@ -9,7 +5,7 @@ end
 local function preview()
     local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
     local markdown = table.concat(lines, "\n") .. "\n"
-    local binary = vim.g.ox_binary or default_binary
+    local binary = vim.g.ox_binary or "ox"
 
     local ok, err = pcall(vim.system, { binary }, {
         stdin = markdown,
