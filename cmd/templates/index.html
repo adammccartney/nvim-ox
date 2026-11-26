@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ox Markdown preview</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      box-sizing: border-box;
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    pre {
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: ui-monospace, monospace;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid;
+      padding: 0.25rem 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main>{{.Content}}</main>
+</body>
+</html>
